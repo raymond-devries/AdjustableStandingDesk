@@ -6,19 +6,29 @@
 
 class deskLeg {
     const HCSR04 distanceSensor;
-    int direction = 0;
-    float height;
-    float actualHeight;
+    const int upPin;
+    const int downPin;
+    float height = 29.5;
+    float actualHeight = distanceSensor.dist();
 
     void move();
+
+    void moveUp() const;
+
+    void moveDown() const;
+
+    void stop() const;
+
 public:
+    void update();
+
     float getActualHeight() const;
 
     float getHeight() const;
 
-    void setHeight(float height);
+    void setHeight(float h);
 
-    deskLeg(int trigPinNumber, int echoPinNumber);
+    deskLeg(int trigPinNumber, int echoPinNumber, int HBUpPin , int HBDownPin);
 };
 
 
