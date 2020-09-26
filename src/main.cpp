@@ -1,1 +1,5 @@
-# Write your code here
+#include "Arduino.h"
+
+void setup() {};
+
+void loop() {};
